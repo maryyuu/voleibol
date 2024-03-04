@@ -1,0 +1,52 @@
+.titulo{
+    text-align: center;
+    font-size: 15px;
+    font-family: bold;
+    background-color: rgb(172, 171, 171);
+    padding: 10px;
+}
+.equipos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.textoEquipos{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+.tabla{
+    border: 1px solid black;
+    padding: 15px;
+}
+.vs{
+    width: 20%;
+}
+.EquipoSolo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+.contenedorPuntos{
+    margin: auto;
+}
+.Puntos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 11px;
+    background-color: rgb(120, 123, 123);
+    color: white;
+    padding: 10px;
+}
+.Puntos:hover{
+    background-color: rgba(120, 123, 123, 0.258);
+    color: black;
+}
