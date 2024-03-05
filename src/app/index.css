@@ -50,3 +50,10 @@
     background-color: rgba(120, 123, 123, 0.258);
     color: black;
 }
+.puntosIncrementados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
