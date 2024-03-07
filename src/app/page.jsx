@@ -19,7 +19,8 @@ export default function Home() {
     const equipo2Sets = [Seet1, Seet2, Seet3, Seet4, Seet5].filter(set => set === "Equipo2").length;
 
     if (equipo1Sets === 3) {
-      return "Equipo 1";
+      return "Equipo 1"
+      
     } else if (equipo2Sets === 3) {
       return "Equipo 2";
     } else {
@@ -27,84 +28,168 @@ export default function Home() {
       
     }
   };
+
+
+const handlePuntosEquipo1 = () => {
+    if (CountEquipo1 >= 24 && CountEquipo2 >= 24) {
+      setCountEquipo1(CountEquipo1+1)
+      if (CountEquipo1 - CountEquipo2 >= 2) {
+        // Equipo 1 gana el set
+        if (!Seet1) {
+            setSeet1("Equipo1");
+            setCountEquipo1(0);
+            setCountEquipo2(0);
+        } else if (!Seet2) {
+            setSeet2("Equipo1");
+            setCountEquipo1(0);
+            setCountEquipo2(0);
+        } else if (!Seet3) {
+            setSeet3("Equipo1");
+            setCountEquipo1(0);
+            setCountEquipo2(0);
+        } else if (!Seet4) {
+            setSeet4("Equipo1");
+            setCountEquipo1(0);
+            setCountEquipo2(0);
+        } else if (!Seet5) {
+            setSeet5("Equipo1");
+            setCountEquipo1(0);
+            setCountEquipo2(0);
+        }
+    } else if (CountEquipo2 - CountEquipo1 >= 2) {
+        // Equipo 2 gana el set
+        if (!Seet1) {
+            setSeet1("Equipo2");
+            setCountEquipo1(0);
+            setCountEquipo2(0);
+        } else if (!Seet2) {
+            setSeet2("Equipo2");
+            setCountEquipo1(0);
+            setCountEquipo2(0);
+        } else if (!Seet3) {
+            setSeet3("Equipo2");
+            setCountEquipo1(0);
+            setCountEquipo2(0);
+        } else if (!Seet4) {
+            setSeet4("Equipo2");
+            setCountEquipo1(0);
+            setCountEquipo2(0);
+        } else if (!Seet5) {
+            setSeet5("Equipo2");
+            setCountEquipo1(0);
+            setCountEquipo2(0);
+        }
+    }
+    } else {
+        // Continuar agregando puntos
+        if (CountEquipo1 <= 24) {
+          setCountEquipo1(CountEquipo1 + 1);
+      } else {
+        if(!Seet1){
+                  setCountEquipo2(0)
+                  setCountEquipo1(0)
+                setSeet1("Equipo1")
+                }else if(!Seet2) {
+                  setCountEquipo2(0)
+                  setCountEquipo1(0)
+                  setSeet2("Equipo1")
+                }else if(!Seet3){
+                  setCountEquipo2(0)
+                  setCountEquipo1(0)
+                  setSeet3("Equipo1")
+                }else if(!Seet4){
+                  setCountEquipo2(0)
+                  setCountEquipo1(0)
+                  setSeet4("Equipo2")
+                }else if(!Seet5){
+                  setSeet5("Equipo1")
+                }
+              }
+  
+    }
+  };
   
 
-  const handlePuntosEquipo1 = () =>{ 
+
+
+  const handleMasEquipo2 = () => {
+    
     if (CountEquipo1 >= 24 && CountEquipo2 >= 24) {
-      // no entra a esta condición
-      setCountEquipo1(CountEquipo1+1);
       setCountEquipo2(CountEquipo2+1)
-    } 
-    else if (CountEquipo1 > 24 && CountEquipo2 - CountEquipo1 >= 2) {
-      setSeet1("Equipo1");
-      setCountEquipo1(0);
-      setCountEquipo2(0);
-    } else {
-      if(CountEquipo1 <= 24 ){
-        setCountEquipo1(CountEquipo1+1) ;
-      }else  {
-       
-        if(!Seet1){
-          setCountEquipo2(0)
-          setCountEquipo1(0)
-        setSeet1("Equipo1")
-        }else if(!Seet2) {
-          setCountEquipo2(0)
-          setCountEquipo1(0)
-          setSeet2("Equipo1")
-        }else if(!Seet3){
-          setCountEquipo2(0)
-          setCountEquipo1(0)
-          setSeet3("Equipo1")
-        }else if(!Seet4){
-          setCountEquipo2(0)
-          setCountEquipo1(0)
-          setSeet4("Equipo2")
-        }else if(!Seet5){
-          setSeet5("Equipo1")
+        if (CountEquipo2 - CountEquipo1 >= 2) {
+          
+          if(!Seet1){
+            setCountEquipo2(0)
+            setCountEquipo1(0)
+          setSeet1("Equipo2")
+          }else if(!Seet2) {
+            setCountEquipo2(0)
+            setCountEquipo1(0)
+            setSeet2("Equipo2")
+          }else if(!Seet3){
+            setCountEquipo2(0)
+            setCountEquipo1(0)
+            setSeet3("Equipo2")
+          }else if(!Seet4){
+            setCountEquipo2(0)
+            setCountEquipo1(0)
+            setSeet4("Equipo2")
+          }else if(!Seet5){
+            setSeet5("Equipo2")
+          }
         }
+        else if (CountEquipo2 > 24 && CountEquipo1 - CountEquipo2 >= 2) {
+          // Equipo 2 gana el set
+          if(!Seet1){
+            setCountEquipo2(0)
+            setCountEquipo1(0)
+          setSeet1("Equipo2")
+          }else if(!Seet2) {
+            setCountEquipo2(0)
+            setCountEquipo1(0)
+            setSeet2("Equipo2")
+          }else if(!Seet3){
+            setCountEquipo2(0)
+            setCountEquipo1(0)
+            setSeet3("Equipo2")
+          }else if(!Seet4){
+            setCountEquipo2(0)
+            setCountEquipo1(0)
+            setSeet4("Equipo2")
+          }else if(!Seet5){
+            setSeet5("Equipo2")
+          }
       }
-    }     
-   }
-
-  const handleMasEquipo2=()=>{
-    if (CountEquipo1 === 24 && CountEquipo2 === 24) {
-      setCountEquipo2(CountEquipo2+1);
+    } else {
+      if (CountEquipo2 <= 24) {
+        setCountEquipo2(CountEquipo2 + 1);
+    } else {
       
+    if(!Seet1){
+      setCountEquipo2(0)
+      setCountEquipo1(0)
+    setSeet1("Equipo2")
+    }else if(!Seet2) {
+      setCountEquipo2(0)
+      setCountEquipo1(0)
+      setSeet2("Equipo2")
+    }else if(!Seet3){
+      setCountEquipo2(0)
+      setCountEquipo1(0)
+      setSeet3("Equipo2")
+    }else if(!Seet4){
+      setCountEquipo2(0)
+      setCountEquipo1(0)
+      setSeet4("Equipo2")
+    }else if(!Seet5){
+      setSeet5("Equipo2")
     }
-    else if (CountEquipo2 >24 && CountEquipo1 <= 25 ) {
-      setSeet1("Equipo2");
-      setCountEquipo1(0);
-      setCountEquipo2(0);
-    } else {
-      if(CountEquipo2 <= 24 ){
-        setCountEquipo2(CountEquipo2+1) 
-      }else  {
-       
-        if(!Seet1){
-          setCountEquipo2(0)
-          setCountEquipo1(0)
-        setSeet1("Equipo2")
-        }else if(!Seet2) {
-          setCountEquipo2(0)
-          setCountEquipo1(0)
-          setSeet2("Equipo2")
-        }else if(!Seet3){
-          setCountEquipo2(0)
-          setCountEquipo1(0)
-          setSeet3("Equipo2")
-        }else if(!Seet4){
-          setCountEquipo2(0)
-          setCountEquipo1(0)
-          setSeet4("Equipo2")
-        }else if(!Seet5){
-          setSeet5("Equipo2")
-        }
-      }
     }
-   }
 
-   const handleMenos1= () =>{
+    }
+};
+
+  const handleMenos1= () =>{
     setCountEquipo1(CountEquipo1-1)
    }
    const handleMenos2=() => {
