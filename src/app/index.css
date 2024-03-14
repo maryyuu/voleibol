@@ -2,28 +2,36 @@
     text-align: center;
     font-size: 15px;
     font-family: bold;
-    background-color: rgb(172, 171, 171);
+    background-color: rgb(135, 219, 221);
     padding: 10px;
 }
 .equipos{
     display: flex;
     flex-wrap: wrap;
-    gap: 60px;
+    gap: 50px;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
 .textoEquipos{
     text-align: center;
-    font-size: 18px;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 0px;
 }
 .tabla{
     border: 1px solid black;
     padding: 15px;
+    border-radius: 10px;
+    text-align: center;
 }
 .vs{
     width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
 }
 .EquipoSolo{
     display: flex;
@@ -45,10 +53,12 @@
     background-color: rgb(120, 123, 123);
     color: white;
     padding: 10px;
+    transition: ease-in-out 0.3s;
 }
 .Puntos:hover{
     background-color: rgba(120, 123, 123, 0.258);
     color: black;
+    box-shadow: 0 0 15px rgb(59, 188, 170);
 }
 .puntosIncrementados {
     display: flex;
@@ -56,4 +66,14 @@
     justify-content: center;
     align-items: center;
     gap: 15px;
+}
+.Contador{
+    margin: 10px;
+    font-size: larger;
+}
+.set_reinicio{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
 }
